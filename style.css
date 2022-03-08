@@ -1,0 +1,131 @@
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;1,400&family=Poppins:ital,wght@0,100;0,200;1,100&family=Roboto+Serif:ital,wght@0,100;0,200;1,100&display=swap");
+:root{
+    --playfair: "playfair Display", serif;
+    --Quicksand: "Quicksand", sans-serif;
+    --Roboto: "Roboto", sans-serif;
+    --white: #ffff;
+    --blue: rgb(34, 34, 82);
+}
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+  }
+  
+  .main{
+    /* background: url(https://images.unsplash.com/photo-1497864149936-d3163f0c0f4b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTN8fGVkdWNhdGlvbnxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60)no-repeat center; */
+   background: url(/school.jpg); 
+    height: 100vh;
+    color:#ffffff;
+    overflow-y: scroll;
+    font-family: var(--playfair);
+    background-size: cover;
+    min-height: 500px;
+
+  }
+ 
+  .main::after{
+    content:"";
+    /* background-color:rgb(0,0,0); */
+    position:fixed;
+     top:0;
+    left:0;
+    right:0;
+    bottom:0;   
+  }
+  .main-content{
+    background-color:rgba(27,27,50,0.8);
+    max-width:700px;
+    display:flex;
+    flex-direction:column;
+    padding:40px;
+    margin:0 auto;
+    margin-bottom:40px;
+    border-radius:9px;
+    z-index:Z;
+    position:relative;
+    box-shadow:0px 1px 10px 5px 0;
+  }
+
+  .main>h1{
+      font-size: 40px;
+      text-align: center;
+
+  }
+  .main>p {
+    text-align:center;
+    font-family:35px;
+    z-index:Z;
+    position:relative;
+  }
+  
+  
+  
+  #name,#email,#number,#dropdown,#comment{
+    display:block;
+    width:100%;
+    height:35%;
+    padding:5px 10px;
+    color:#000000;
+    background-color:#ffffff;
+    border:1px solid #eeeeee;
+    border-radius:10px;
+    font-size:15px;
+    margin-bottom:40px;
+  }
+  .main .main-content .field{
+    font-size: 25px;
+  font-weight: 600;
+  margin-bottom: 10px; 
+  display: inline-block;
+  padding: 10px 30px;
+  margin-top: 20px; 
+  }
+  label[for=name],
+  label[for=email],
+  label[for=number],
+  label[for=dropdown],
+  label[for=comment]{
+  margin-bottom:10px;
+    display:inline-block;
+  }
+  
+  
+   /* #dropdown{
+    height:20px;
+    width:20px;
+    margin-right:15px;
+    margin-bottom:15px;
+   } */
+  #comment{
+    min-height:180px;
+  }
+  
+  label[for=comment]{
+    margin-top:30px
+  }
+  .main .main-content .button{
+    height: 47px;
+    width:170px;
+    margin-bottom: 50px;
+  }
+  .main .main-content .button button{
+    width: 100%;
+    height: 100%;
+    border: 2px solid var(--white); 
+    background:var(--blue);
+    font-size: 20px;
+    font-weight: 500;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.3s ease ;
+  }
+  .main .main-content .button  button:hover{
+    color: var(--blue);
+    background: none;
+  }
+  
+    
+  
+  
