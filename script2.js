@@ -26,46 +26,32 @@ const re =  /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-
       .toLowerCase()); 
   }
 
-// check password match
-function checkPasswordsMatch(input1, input2) {
-    if (input1.value !== input2.value){
-        showError(input2, 'passwords do not match');
+// checkrequired fields
+function checkRequired(inputArr){
+inputArr.forEach(function(input) {
+    if (input.value.trim === '') {
+        showError(input, `${getFieldName(input)} is required`);
+    } else{
+        showSuccess(input);
     }
+});
 }
+//  Get fieldname
+ function getFieldName(input){
+     return input.id.charAt(0).toUpperCase() + input.id.slice(1);
+ }
 
-
+ //checkPasswordsMatch
+ function checkPasswordsMatch(input1, input2){
+     if (input1.value !== input2.value) {
+         showError(input2, 'Passwords dot not match');
+     }
+    
+ }
 // event listener
 form.addEventListener('submit', function(e) {
     e.preventDefault();
 
-      if (name.value === '') {
-          showError(name, 'Username is required');
-      } else{
-          showSuccess(name);    
-      }
-
-   
-      if (email.value === '') {
-          showError(email, 'Email is required');
-      } else if (!validEmail(email.value)) {
-          showError(email, 'Email is not valid');
-      }
-       else{
-          showSuccess(email);    
-      }
-      if (password.value === '') {
-          showError(password, 'Password is required');
-      } else{
-          showSuccess(password);    
-      }
-      if (password2.value === '') {
-          showError(password2, 'Password is required');
-      } else{
-          showSuccess(password2);    
-      }
-      
-      
-
+checkRequired([name, email, password, password2]);
 checkPasswordsMatch(password, password2);
-
 });
